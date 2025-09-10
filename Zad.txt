@@ -1,0 +1,422 @@
+// Задание 1
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Введите число: ");
+    scanf("%d", &num);
+    printf("Вы ввели: %d\n", num);
+    return 0;
+}
+//Задание 2
+#include <stdio.h>
+
+int main() {
+    double a, b;
+    printf("Введите первое число: ");
+    scanf("%lf", &a);
+    printf("Введите второе число: ");
+    scanf("%lf", &b);
+
+    printf("Сумма: %.2lf\n", a + b);
+    printf("Разность: %.2lf\n", a - b);
+    printf("Произведение: %.2lf\n", a * b);
+    if (b != 0) {
+        printf("Частное: %.2lf\n", a / b);
+    } else {
+        printf("На ноль делить нельзя!\n");
+    }
+    return 0;
+}
+//Задание 3
+#include <stdio.h>
+
+int main() {
+    double a, b, c;
+    printf("Введите три числа: ");
+    scanf("%lf %lf %lf", &a, &b, &c);
+
+    double avg = (a + b + c) / 3.0;
+    printf("Среднее арифметическое: %.2lf\n", avg);
+    return 0;
+}
+//Задание 4
+#include <stdio.h>
+
+int main() {
+    char name[50];
+    printf("Введите ваше имя: ");
+    scanf("%s", name); // или fgets для строк с пробелами
+    printf("Привет, %s!\n", name);
+    return 0;
+}
+//Задание 5
+#include <stdio.h>
+
+int main() {
+    int birthYear, currentYear = 2025; // можно запросить у пользователя
+    printf("Введите год рождения: ");
+    scanf("%d", &birthYear);
+
+    int age = currentYear - birthYear;
+    printf("Ваш возраст: %d лет\n", age);
+    return 0;
+}
+//Задание 6
+
+//Задание 7
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Введите число: ");
+    scanf("%d", &num);
+
+    if (num % 2 == 0) {
+        printf("Число четное.\n");
+    } else {
+        printf("Число нечетное.\n");
+    }
+    return 0;
+}
+//Задание 8
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Введите число: ");
+    scanf("%d", &num);
+
+    if (num > 0) {
+        printf("Число положительное.\n");
+    } else if (num < 0) {
+        printf("Число отрицательное.\n");
+    } else {
+        printf("Число равно нулю.\n");
+    }
+    return 0;
+}
+//Задание9
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Введите число: ");
+    scanf("%d", &num);
+
+    if (num % 3 == 0) {
+        printf("Число кратно 3.\n");
+    } else {
+        printf("Число не кратно 3.\n");
+    }
+    return 0;
+}
+//Задание 10
+#include <stdio.h>
+
+int main() {
+    double a, b;
+    printf("Введите два числа: ");
+    scanf("%lf %lf", &a, &b);
+
+    if (a > b) {
+        printf("Большее число: %.2lf\n", a);
+    } else if (b > a) {
+        printf("Большее число: %.2lf\n", b);
+    } else {
+        printf("Числа равны.\n");
+    }
+    return 0;
+}
+//Задание 11
+#include <stdio.h>
+
+int main() {
+    double a, b;
+    printf("Введите два числа: ");
+    scanf("%lf %lf", &a, &b);
+
+    if (a == b) {
+        printf("Числа равны.\n");
+    } else {
+        printf("Числа не равны.\n");
+    }
+    return 0;
+}
+//Задание 1 (циклы)
+#include <stdio.h>
+
+int main() {
+    for (int i = 1; i <= 10; i++) {
+        printf("%d ", i);
+    }
+    printf("\n");
+    return 0;
+}
+
+//Задание 2 (циклы)
+#include <stdio.h>
+
+int main() {
+    int n = 5;
+    for (int i = 1; i <= 10; i++) {
+        printf("%d * %d = %d\n", n, i, n * i);
+    }
+    return 0;
+}
+
+//Задание 3 (циклы)
+#include <stdio.h>
+
+int main() {
+    int sum = 0;
+    for (int i = 1; i <= 100; i++) {
+        sum += i;
+    }
+    printf("Сумма чисел от 1 до 100: %d\n", sum);
+    return 0;
+}
+
+//Задание 4 (циклы)
+#include <stdio.h>
+
+int main() {
+    printf("Числа от 1 до 100, кратные 3 или 5:\n");
+    for (int i = 1; i <= 100; i++) {
+        if (i % 3 == 0 || i % 5 == 0) {
+            printf("%d ", i);
+        }
+    }
+    printf("\n");
+    return 0;
+}
+
+//Задание 5 (циклы)
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Введите число: ");
+    scanf("%d", &num);
+
+    printf("Делители числа %d: ", num);
+    for (int i = 1; i <= num; i++) {
+        if (num % i == 0) {
+            printf("%d ", i);
+        }
+    }
+    printf("\n");
+    return 0;
+}
+
+//Задание 1 (массивы)
+#include <stdio.h>
+
+int main() {
+    int arr[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    printf("Элементы массива: ");
+    for (int i = 0; i < 10; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    return 0;
+}
+
+//Задание 2 (массивы)
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    int arr[10];
+    srand(time(NULL));
+
+    printf("Случайные элементы массива: ");
+    for (int i = 0; i < 10; i++) {
+        arr[i] = rand() % 100;
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    return 0;
+}
+
+//Задание 3 (массивы)
+#include <stdio.h>
+
+int main() {
+    int arr[10];
+    printf("Введите 10 чисел:\n");
+    for (int i = 0; i < 10; i++) {
+        printf("Число %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Вы ввели: ");
+    for (int i = 0; i < 10; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    return 0;
+}
+
+//Задание 4 (массивы)
+#include <stdio.h>
+
+int main() {
+    int arr[10] = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50};
+    int sum = 0;
+
+    for (int i = 0; i < 10; i++) {
+        sum += arr[i];
+    }
+
+    printf("Сумма элементов массива: %d\n", sum);
+    return 0;
+}
+
+//Задание 5 (массивы)
+#include <stdio.h>
+
+int main() {
+    int arr1[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int arr2[10] = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+    int result[10];
+
+    printf("Сумма массивов:\n");
+    for (int i = 0; i < 10; i++) {
+        result[i] = arr1[i] + arr2[i];
+        printf("%d ", result[i]);
+    }
+    printf("\n");
+    return 0;
+}
+
+//Задание 1 (функции)
+#include <stdio.h>
+
+long long factorial(int n) {
+    if (n < 0) return -1;
+    long long fact = 1;
+    for (int i = 1; i <= n; i++) {
+        fact *= i;
+    }
+    return fact;
+}
+
+int main() {
+    int num;
+    printf("Введите число: ");
+    scanf("%d", &num);
+
+    long long result = factorial(num);
+    if (result == -1) {
+        printf("Факториал не определен для отрицательных чисел.\n");
+    } else {
+        printf("Факториал %d = %lld\n", num, result);
+    }
+    return 0;
+}
+
+//Задание 2 (функции)
+#include <stdio.h>
+#include <math.h>
+
+int isPrime(int n) {
+    if (n < 2) return 0;
+    if (n == 2) return 1;
+    if (n % 2 == 0) return 0;
+
+    for (int i = 3; i <= sqrt(n); i += 2) {
+        if (n % i == 0) return 0;
+    }
+    return 1;
+}
+
+int main() {
+    int num;
+    printf("Введите число: ");
+    scanf("%d", &num);
+
+    if (isPrime(num)) {
+        printf("%d — простое число.\n", num);
+    } else {
+        printf("%d — не простое число.\n", num);
+    }
+    return 0;
+}
+
+//Задание 3 (функции)
+#include <stdio.h>
+
+void printDivisors(int n) {
+    printf("Делители числа %d: ", n);
+    for (int i = 1; i <= n; i++) {
+        if (n % i == 0) {
+            printf("%d ", i);
+        }
+    }
+    printf("\n");
+}
+
+int main() {
+    int num;
+    printf("Введите число: ");
+    scanf("%d", &num);
+    printDivisors(num);
+    return 0;
+}
+
+//Задание 4 (функции)
+#include <stdio.h>
+
+void printNumbersBetween(int a, int b) {
+    if (a > b) {
+        int temp = a;
+        a = b;
+        b = temp;
+    }
+
+    printf("Числа между %d и %d: ", a, b);
+    for (int i = a + 1; i < b; i++) {
+        printf("%d ", i);
+    }
+    printf("\n");
+}
+
+int main() {
+    int x, y;
+    printf("Введите два числа: ");
+    scanf("%d %d", &x, &y);
+    printNumbersBetween(x, y);
+    return 0;
+}
+
+//Задание 5 (функции)
+#include <stdio.h>
+
+int sumOfDivisors(int n) {
+    int sum = 0;
+    for (int i = 1; i < n; i++) {
+        if (n % i == 0) {
+            sum += i;
+        }
+    }
+    return sum;
+}
+
+int areAmicable(int a, int b) {
+    return (sumOfDivisors(a) == b && sumOfDivisors(b) == a);
+}
+
+int main() {
+    int x, y;
+    printf("Введите два числа: ");
+    scanf("%d %d", &x, &y);
+
+    if (areAmicable(x, y)) {
+        printf("%d и %d — дружественные числа.\n", x, y);
+    } else {
+        printf("%d и %d — не дружественные числа.\n", x, y);
+    }
+    return 0;
+}
