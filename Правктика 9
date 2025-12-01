@@ -1,0 +1,94 @@
+03.05.2024 Это первая строка с 5 словами.
+15.06.2024 Эта строка будет проигнорирована.
+03.05.2024 Это вторая строка, она тоже пройдет фильтр.
+Еще одна строка 12345.
+03.05.2024 Финальная строка: 987 654 321.
+
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_LINE_LENGTH 1024 
+#define PREFIX "03.05.2024" 
+#define PREFIX_LEN 10 
+
+int main() {
+    char line[MAX_LINE_LENGTH];
+    
+    while (fgets(line, MAX_LINE_LENGTH, stdin) != NULL) {
+        if (strncmp(line, PREFIX, PREFIX_LEN) == 0) {
+            fputs(line, stdout);
+        }
+    }
+    
+    return 0;
+}
+
+
+
+
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+#define MAX_LINE_LENGTH 1024
+
+int count_words(const char *str) {
+    int count = 0;
+    int in_word = 0; 
+
+    while (*str) {
+        if (isalnum(*str)) { 
+            if (!in_word) {
+                in_word = 1;
+                count++;
+            }
+        } else {
+            in_word = 0;
+        }
+        str++;
+    }
+    return count;
+}
+
+int main() {
+    char line[MAX_LINE_LENGTH];
+    
+    while (fgets(line, MAX_LINE_LENGTH, stdin) != NULL) {
+        int word_count = count_words(line);
+        
+        line[strcspn(line, "\n")] = 0; 
+        
+        printf("%s (Слов: %d)\n", line, word_count);
+    }
+    
+    return 0;
+}
+
+
+
+
+
+
+
+
+#include <stdio.h>
+#include <ctype.h>
+
+#define MAX_LINE_LENGTH 1024
+
+int main() {
+    char line[MAX_LINE_LENGTH];
+    long total_digit_count = 0;
+    
+    while (fgets(line, MAX_LINE_LENGTH, stdin) != NULL) {
+        for (int i = 0; line[i] != '\0'; i++) {
+            if (isdigit(line[i])) {
+                total_digit_count++;
+            }
+        }
+    }
+    
+    printf("Общее количество цифр в файле: %ld\n", total_digit_count);
+    
+    return 0;
+}
